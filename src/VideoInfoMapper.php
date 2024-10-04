@@ -11,7 +11,7 @@ class VideoInfoMapper
     public static function fromInitialPlayerResponse(InitialPlayerResponse $initialPlayerResponse): VideoInfo
     {
         // "videoDetails" appears in a bunch of other places too
-        $videoDetails = $initialPlayerResponse->getVideoDetails();
+        $videoDetails = $initialPlayerResponse->getVideoDetails() ?? [];
 
         $result = new VideoInfo();
 
