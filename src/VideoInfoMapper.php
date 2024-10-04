@@ -2,6 +2,7 @@
 
 namespace YouTube;
 
+use YouTube\Exception\YouTubeException;
 use YouTube\Models\InitialPlayerResponse;
 use YouTube\Models\VideoInfo;
 use YouTube\Utils\Utils;
@@ -11,7 +12,11 @@ class VideoInfoMapper
     public static function fromInitialPlayerResponse(InitialPlayerResponse $initialPlayerResponse): VideoInfo
     {
         // "videoDetails" appears in a bunch of other places too
-        $videoDetails = $initialPlayerResponse->getVideoDetails() ?? [];
+        $videoDetails = $initialPlayerResponse->getVideoDetails();
+
+        if ($videoDetails === null) {
+            throw new YouTubeException('Video details not found in the initial player response');
+        }
 
         $result = new VideoInfo();
 
