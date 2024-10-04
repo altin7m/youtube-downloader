@@ -86,8 +86,8 @@ You can change default Youtube request Client headers.
 
 ```php
 $youtube = new YouTubeDownloader();
-$youtube->getYoutubeClientHeaders()->setClientName('ANDROID');
-$youtube->getYoutubeClientHeaders()->setClientVersion('19.10.38');
+$youtube->getYoutubeClientHeaders()->setClientName('ANDROID_TESTSUITE');
+$youtube->getYoutubeClientHeaders()->setClientVersion('1.9');
 ```
 
 See also:  

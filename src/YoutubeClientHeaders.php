@@ -4,8 +4,8 @@ namespace YouTube;
 
 class YoutubeClientHeaders
 {
-    protected string $clientName = "ANDROID";
-    protected string $clientVersion = "19.10.38";
+    protected string $clientName = "ANDROID_TESTSUITE";
+    protected string $clientVersion = "1.9";
 
     public function setClientName(string $clientName): void
     {
